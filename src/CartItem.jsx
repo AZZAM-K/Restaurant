@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { deleteIcon } from './assets'
 function CartItem({ item, dispatch }) {
   return (
     <li className='cart-item'>
@@ -18,7 +19,7 @@ function CartItem({ item, dispatch }) {
           })
         }}
       >
-        <img src='images/icon-remove-item.svg' alt='remove item' />
+        <img src={deleteIcon} alt='remove item' />
       </button>
     </li>
   )

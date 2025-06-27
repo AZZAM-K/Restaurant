@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types'
+import { cartIcon, plusIcon, minusIcon } from './assets'
+
 function Dessert({ product, dispatch }) {
   const className = product.count > 0 ? 'product-image added' : 'product-image'
 
   return (
     <div style={{ width: 'fit-content' }}>
       <div className={className}>
-        <img
-          src={`images/image-${product.category.replace(' ', '-')}-desktop.jpg`}
-          alt={product.category}
-        />
+        <img src={product.img} alt={product.category} />
         {product.count === 0 ? (
           <button
             className='dessert-button'
@@ -19,7 +18,7 @@ function Dessert({ product, dispatch }) {
               })
             }}
           >
-            <img src='images/icon-add-to-cart.svg' /> Add to Cart
+            <img src={cartIcon} /> Add to Cart
           </button>
         ) : (
           <div className='edit-dessert'>
@@ -31,7 +30,7 @@ function Dessert({ product, dispatch }) {
                 })
               }}
             >
-              <img src='images/icon-decrement-quantity.svg' />
+              <img src={minusIcon} />
             </button>
             <span>{product.count}</span>
             <button
@@ -42,7 +41,7 @@ function Dessert({ product, dispatch }) {
                 })
               }}
             >
-              <img src='images/icon-increment-quantity.svg' />
+              <img src={plusIcon} />
             </button>
           </div>
         )}

@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types'
 import CartItem from './CartItem'
+import { carbonNeutral, emptyCart } from './assets'
+
 function Cart({ items, orderTotal, dispatch, onConfirm }) {
   const totalCount = getTotalCount(items)
   const cartContent =
@@ -15,7 +17,7 @@ function Cart({ items, orderTotal, dispatch, onConfirm }) {
           <span>${orderTotal}</span>
         </div>
         <div className='carbon-neutral'>
-          <img src='images/icon-carbon-neutral.svg' alt='carbon neutral' />
+          <img src={carbonNeutral} alt='carbon neutral' />
           <span>
             This is a <b>carbon-neutral</b> delivery
           </span>
@@ -26,7 +28,7 @@ function Cart({ items, orderTotal, dispatch, onConfirm }) {
       </>
     ) : (
       <div className='empty-cart'>
-        <img src='images/illustration-empty-cart.svg' alt='empty cart' />
+        <img src={emptyCart} alt='empty cart' />
         <p>Your added items will appear here</p>
       </div>
     )
